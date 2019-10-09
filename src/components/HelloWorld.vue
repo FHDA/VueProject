@@ -61,16 +61,16 @@ export default {
   data() {
     return {
       quarterOptions: [{
-        valueQ: '选项1',
+        valueQ: 'option1',
         labelQ: 'Fall'
       }, {
-        valueQ: '选项2',
+        valueQ: 'option2',
         labelQ: 'Winter'
       }, {
-        valueQ: '选项3',
+        valueQ: 'option3',
         labelQ: 'Spring'
       }, {
-        valueQ: '选项4',
+        valueQ: 'option4',
         labelQ: 'Summer'
       }],
       departmentOptions: [{
