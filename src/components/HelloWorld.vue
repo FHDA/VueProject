@@ -1,16 +1,17 @@
 <template>
-  <div class="hello">
+  <!-- <div class="hello"> -->
+  <div class="focus">
     <h1>{{ msg }}</h1>
 
     <el-row>
       
       Select quarter:
-      <el-button>Fall</el-button>
-      <el-button>Winter</el-button>
-      <el-button>Spring</el-button>
-      <el-button>Summer</el-button>
-      
+      <el-button class='focus' v-on:click="setFall">Fall</el-button>
+      <el-button v-on:click="setWinter">Winter</el-button>
+      <el-button v-on:click="setSpring">Spring</el-button>
+      <el-button v-on:click="setSummer">Summer</el-button>
     </el-row>
+    <p>Selected quarter: {{ quarter }}</p>
 
     <p>
     Select department:
@@ -28,57 +29,56 @@
         </el-option-group>
       </el-select>
     </p>
-
-    
+    <p>Selected course: {{ course }}</p>
     <el-button type="primary" icon="el-icon-search">Search</el-button>
-
-
-    <!--
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      
-    </ul>
-    -->
+    
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
+  methods:{
+    setFall() {
+      this.quarter = 'Fall'
+    },
+    setWinter() {
+      this.quarter = 'Winter'
+    },
+    setSpring() {
+      this.quarter = 'Spring'
+    },
+    setSummer() {
+      this.quarter = 'Summer'
+    }
+  },
   data() {
     return {
-      quarterOptions: 
-      [
-        {
-          valueQ: 'option1',
-          labelQ: 'Fall'
-        }, 
-        {
-          valueQ: 'option2',
-          labelQ: 'Winter'
-        }, 
-        {
-          valueQ: 'option3',
-          labelQ: 'Spring'
-        }, 
-        {
-          valueQ: 'option4',
-          labelQ: 'Summer'
-        }
-      ],
+      quarter: '',
+      course: '',
+      // quarterOptions: 
+      // [
+      //   {
+      //     valueQ: 'option1',
+      //     labelQ: 'Fall'
+      //   }, 
+      //   {
+      //     valueQ: 'option2',
+      //     labelQ: 'Winter'
+      //   }, 
+      //   {
+      //     valueQ: 'option3',
+      //     labelQ: 'Spring'
+      //   }, 
+      //   {
+      //     valueQ: 'option4',
+      //     labelQ: 'Summer'
+      //   }
+      // ],
       departmentOptions: 
       [
         {
@@ -544,5 +544,11 @@ a {
 .el-main {
   line-height: 100px;
 }
+
+.focus:focus {
+  /* color: darkcyan; */
+  color: red;
+}
+
 
 </style>
