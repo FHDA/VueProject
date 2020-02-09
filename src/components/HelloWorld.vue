@@ -29,7 +29,7 @@
         </el-option-group>
       </el-select>
     </p>
-    <p>Selected course: {{ course }}</p>
+    <p>Selected course: {{ value }}</p>
     <el-button type="primary" icon="el-icon-search">Search</el-button>
     
   </div>
@@ -51,25 +51,6 @@ export default {
     return {
       quarter: '',
       course: '',
-      // quarterOptions: 
-      // [
-      //   {
-      //     valueQ: 'option1',
-      //     labelQ: 'Fall'
-      //   }, 
-      //   {
-      //     valueQ: 'option2',
-      //     labelQ: 'Winter'
-      //   }, 
-      //   {
-      //     valueQ: 'option3',
-      //     labelQ: 'Spring'
-      //   }, 
-      //   {
-      //     valueQ: 'option4',
-      //     labelQ: 'Summer'
-      //   }
-      // ],
       departmentOptions: 
       [
         {
