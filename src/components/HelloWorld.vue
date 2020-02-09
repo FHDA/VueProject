@@ -1,15 +1,15 @@
 <template>
   <!-- <div class="hello"> -->
-  <div class="focus">
+  <div class="hello">
     <h1>{{ msg }}</h1>
 
     <el-row>
       
       Select quarter:
-      <el-button class='focus' v-on:click="setFall">Fall</el-button>
-      <el-button v-on:click="setWinter">Winter</el-button>
-      <el-button v-on:click="setSpring">Spring</el-button>
-      <el-button v-on:click="setSummer">Summer</el-button>
+      <el-button class='focus' v-on:click="setQtr('Fall')">Fall</el-button>
+      <el-button class='focus' v-on:click="setQtr('Winter')">Winter</el-button>
+      <el-button class='focus' v-on:click="setQtr('Spring')">Spring</el-button>
+      <el-button class='focus' v-on:click="setQtr('Summer')">Summer</el-button>
     </el-row>
     <p>Selected quarter: {{ quarter }}</p>
 
@@ -43,17 +43,8 @@ export default {
     msg: String
   },
   methods:{
-    setFall() {
-      this.quarter = 'Fall'
-    },
-    setWinter() {
-      this.quarter = 'Winter'
-    },
-    setSpring() {
-      this.quarter = 'Spring'
-    },
-    setSummer() {
-      this.quarter = 'Summer'
+    setQtr(quarterName) {
+      this.quarter = quarterName
     }
   },
   data() {
@@ -522,6 +513,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+body {
+  background-color: #b8032c;
+  /* padding: 50px; */
+}
+
 h3 {
   margin: 40px 0 0;
 }
