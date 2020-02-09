@@ -4,7 +4,6 @@
     <h1>{{ msg }}</h1>
 
     <el-row>
-      
       Select quarter:
       <el-button class='focus' v-on:click="setQtr('Fall')">Fall</el-button>
       <el-button class='focus' v-on:click="setQtr('Winter')">Winter</el-button>
@@ -39,9 +38,9 @@
 
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  // props: {
+  //   msg: String
+  // },
   methods:{
     setQtr(quarterName) {
       this.quarter = quarterName
@@ -49,6 +48,7 @@ export default {
   },
   data() {
     return {
+      // msg: 'FHDATIME',
       quarter: '',
       course: '',
       departmentOptions: 
@@ -495,10 +495,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-body {
+/* body {
   background-color: #b8032c;
-  /* padding: 50px; */
-}
+  padding: 50px;
+} */
 
 h3 {
   margin: 40px 0 0;
@@ -524,8 +524,8 @@ a {
 }
 
 .focus:focus {
-  /* color: darkcyan; */
-  color: red;
+  color: darkcyan;
+  /* color: red; */
 }
 
 
