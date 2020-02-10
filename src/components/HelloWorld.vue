@@ -1,35 +1,43 @@
 <template>
-  <!-- <div class="hello"> -->
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div id="app">
+    <main>
+      <h1>{{ msg }}</h1>
 
-    <el-row>
-      Select quarter:
-      <el-button class='focus' v-on:click="setQtr('Fall')">Fall</el-button>
-      <el-button class='focus' v-on:click="setQtr('Winter')">Winter</el-button>
-      <el-button class='focus' v-on:click="setQtr('Spring')">Spring</el-button>
-      <el-button class='focus' v-on:click="setQtr('Summer')">Summer</el-button>
-    </el-row>
-    <p>Selected quarter: {{ quarter }}</p>
-
-    <p>
-    Select department:
-      <el-select v-model="value" placeholder="Select">
-        <el-option-group
-          v-for="group in departmentOptions"
-          :key="group.label"
-          :label="group.label">
-          <el-option
-            v-for="item in group.departmentOptions"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-option-group>
-      </el-select>
-    </p>
-    <p>Selected course: {{ value }}</p>
-    <el-button type="primary" icon="el-icon-search">Search</el-button>
+      <div class="quarter">
+        <el-row>
+          Select quarter:
+          <el-button class='focus' v-on:click="setQtr('Fall')">Fall</el-button>
+          <el-button class='focus' v-on:click="setQtr('Winter')">Winter</el-button>
+          <el-button class='focus' v-on:click="setQtr('Spring')">Spring</el-button>
+          <el-button class='focus' v-on:click="setQtr('Summer')">Summer</el-button>
+        </el-row>
+        <p>Selected quarter: {{ quarter }}</p>
+      </div>
+      
+      <div class="course">
+        <div class="select-box">
+          Select course:
+          <el-select v-model="value" placeholder="Select">
+            <el-option-group
+              v-for="group in departmentOptions"
+              :key="group.label"
+              :label="group.label">
+              <el-option
+                v-for="item in group.departmentOptions"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-option-group>
+          </el-select>
+          <p>Selected course: {{ value }}</p>
+        </div>
+        <div class="search-button">
+          <el-button type="primary" icon="el-icon-search">Search</el-button>
+        </div>
+        
+      </div>
+    </main>
     
   </div>
 </template>
@@ -38,9 +46,6 @@
 
 export default {
   name: 'HelloWorld',
-  // props: {
-  //   msg: String
-  // },
   methods:{
     setQtr(quarterName) {
       this.quarter = quarterName
@@ -48,7 +53,7 @@ export default {
   },
   data() {
     return {
-      // msg: 'FHDATIME',
+      msg: 'FHDATime',
       quarter: '',
       course: '',
       departmentOptions: 
@@ -493,16 +498,25 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
 
+<style scoped> 
 /* body {
   background-color: #b8032c;
   padding: 50px;
 } */
 
+h1 {
+  color: azure;
+  font-size: 50px;
+  /* font-weight: bold; */
+  text-align: center;
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.75);
+}
+
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -525,8 +539,37 @@ a {
 
 .focus:focus {
   color: darkcyan;
-  /* color: red; */
 }
 
+/* #app {
+  background-image: url('../assets/library.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+} */
+
+main{
+  padding: 20px;
+  min-height: 88vh;
+  font-family: Helvetica;
+  font-weight: bold;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+}
+
+.quarter {
+  padding: 35px 10px;
+  color: #8ED5FA;
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.course .select-box {
+  padding: 10px 35px;
+  color: white;
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.course .search-button {
+  padding: 35px 35px;
+}
 
 </style>

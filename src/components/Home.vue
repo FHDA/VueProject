@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
     <HelloWorld/>
 
 
@@ -20,15 +20,15 @@ export default {
   },
   data () {
     return {
-      msg: 'FHDATIME'
+      msg: 'HOME'
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
+<style>
+/* h1, h2 {
   font-weight: normal;
 }
 ul {
@@ -41,5 +41,5 @@ li {
 }
 a {
   color: #42b983;
-}
+} */
 </style>
