@@ -9,14 +9,14 @@
         </el-col>
         <el-col :span="8">
           <div class="grid-content bg-purple">
-            <router-link to="/About">About
+            <router-link to="/about">About
               <i class="el-icon-info"></i>
             </router-link>
           </div>
         </el-col>
         <el-col :span="8">
           <div class="grid-content bg-purple">
-            <router-link to="/Contact">Contact
+            <router-link to="/contact">Contact
               <i class="el-icon-phone"></i>
             </router-link>
           </div>
@@ -24,7 +24,7 @@
         <!-- <el-col :span="4"><div class="grid-content bg-purple"></div></el-col> -->
       </el-row>
 
-    <!-- <button @click="$router.push('about')">Click to Navigate</button -->
+
 
     <router-view/>
     <!-- </main> -->
@@ -46,10 +46,11 @@ export default {
 
 <style>
 
+
 #app {
-  background-image: url('./assets/library.jpg');
+  /* background-image: url('./assets/library.jpg');
   background-size: cover;
-  background-position: bottom;
+  background-position: bottom; */
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

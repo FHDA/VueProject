@@ -8,7 +8,7 @@ Vue.use(Router)
 import Home from '@/components/Home'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
-// import FirstRoute from '@/components/FirstRoute'
+import Search from '@/components/Search'
 // import FirstRouteChild from '@/components/FirstRouteChild'
 
 import ElementUI from 'element-ui'
@@ -26,14 +26,20 @@ const router = new Router({
       component: Home
     },
     {
-      path: '/About',
+      path: '/about',
       name: 'About',
       component: About
     },
     {
-      path: '/Contact',
+      path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search,
+      props: true
     }
   ]
 })

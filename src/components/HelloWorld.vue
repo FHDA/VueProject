@@ -17,7 +17,7 @@
       <div class="course">
         <div class="select-box">
           Select course:
-          <el-select v-model="value" placeholder="Select">
+          <el-select v-model="value" placeholder="Select" @change="setDpm(value)">
             <el-option-group
               v-for="group in departmentOptions"
               :key="group.label"
@@ -30,12 +30,16 @@
               </el-option>
             </el-option-group>
           </el-select>
-          <p>Selected course: {{ value }}</p>
+          <p>Selected course: {{ dmpCourse }}</p>
+
+
+
         </div>
         <div class="search-button">
           <el-button type="primary" icon="el-icon-search">Search</el-button>
-        </div>
+            <button @click="$router.push({ name: 'Search', params: {qtr: quarter, dpm: dmpCourse}})">Search</button>
         
+        </div>
       </div>
     </main>
     
@@ -44,18 +48,22 @@
 
 <script>
 
+
 export default {
   name: 'HelloWorld',
   methods:{
     setQtr(quarterName) {
       this.quarter = quarterName
+    },
+    setDpm(departmentName) {
+      this.dmpCourse = departmentName
     }
   },
   data() {
     return {
       msg: 'FHDATime',
       quarter: '',
-      course: '',
+      dmpCourse: '',
       departmentOptions: 
       [
         {
@@ -541,12 +549,12 @@ a {
   color: darkcyan;
 }
 
-/* #app {
+#app {
   background-image: url('../assets/library.jpg');
   background-size: cover;
   background-position: bottom;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
-} */
+  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75)); */
+}
 
 main{
   padding: 20px;

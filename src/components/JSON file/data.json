@@ -1,0 +1,15 @@
+[
+  {"coursename": "CIS 2", 
+    "instructor": "Karina Dundurs",
+    "title": "Computers and the Internet in Society",
+    "quarter": "Fall"},
+  {"coursename": "CIS 3", 
+    "instructor": "Alexander Morgan Jr",
+    "title": "Computers and the Internet in Society",
+    "quarter": "Fall"},
+  {"coursename": "CIS 22A", 
+    "instructor": "Seema Gupta",
+    "title": "Beginning Programming Methodologies in C++",
+    "quarter": "Fall"}
+]
+
